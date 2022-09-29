@@ -1,0 +1,263 @@
+
+body {
+    background-color: rgb(10, 0, 39);
+}
+
+/*body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}*/
+h1 {
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 70px;
+}
+
+
+.cadastrar {
+    text-align: center;
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.container {
+    display: grid;
+    /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
+    grid-template-columns: repeat(4, 1fr);
+    /* esssa é a altura das linhas, se vc quiser pode apaga-la caso não queira uma altura definida */
+    grid-auto-rows: 100px;
+    /* espaço entre um elemento interno e outro */
+    grid-gap: 5px 8px;
+    /* margem interna que afasta os elementos da borda do grid */
+    padding: 20px 10px;
+    text-align: center;
+    align-items: center;
+    margin-top: 100px;
+  }
+  
+
+svg{
+    transition: all .3s ease-in-out;
+}
+
+svg:hover{
+    fill: #0004ff;
+    transform: scale(1.15);
+}
+
+a{
+    text-decoration: none;
+}
+
+a > p {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all .2s ease-in-out;
+}
+
+a > p:hover{
+
+    color: #03d3fc;
+}
+
+
+/* FORMS */
+
+
+  
+  form {
+    background-color: #15172b;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 860px;
+    padding: 20px;
+    width: 420px;
+  }
+  
+  .title {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 30px;
+  }
+  
+  .subtitle {
+    color: #eee;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+  }
+  
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+  }
+  
+  .ic1 {
+    margin-top: 40px;
+  }
+  
+  .ic2 {
+    margin-top: 30px;
+  }
+  
+  .input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+  }
+  
+  .cut {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 72px;
+  }
+  
+  .cut-grande {
+    background-color: #15172b;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 132px;
+  }
+
+
+  .cut-short {
+    width: 50px;
+  }
+  
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+  
+  .input:focus ~ .cut-grande,
+  .input:not(:placeholder-shown) ~ .cut-grande {
+    transform: translateY(8px);
+  }
+
+
+  .placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+  }
+  
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+  
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  .input:focus ~ .placeholder {
+    color: #03d3fc;
+  }
+  
+  .submit {
+    background-color: #03d3fc;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    cursor: pointer;
+    font-size: 18px;
+    height: 50px;
+    margin-top: 38px;
+    /* outline: 0;*/   
+    text-align: center;
+    width: 100%;
+  }
+  
+  .submit:active {
+    background-color: #06b;
+  }
+  
+  select{
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+    outline: none;
+  }
+
+  select:focus ~ .cut-grande,
+  select:not(:placeholder-shown) ~ .cut-grande {
+    transform: translateY(8px);
+  }
+
+  select:focus ~ .placeholder,
+  select:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+  }
+
+  select:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+  }
+  
+  select:focus ~ .placeholder {
+    color: #03d3fc;
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .formbody{
+    align-items: center;
+  background-color: rgb(10, 0, 39);;
+  display: flex;
+  justify-content: center;
+  height: 150vh;
+  }
+
+
+
+
+
+
+
+
+
+
