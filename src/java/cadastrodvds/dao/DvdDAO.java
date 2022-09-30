@@ -124,8 +124,9 @@ public class DvdDAO extends DAO<Dvd> {
             "   WHERE" +
             "   d.genero_id = g.id AND " +
             "   d.classificacao_id = c.id AND " +
-            "   d.atorp_id = a.id AND" +
-            "   d.atorc_id = a.id"
+            "   d.atorp_id = a.id AND " +
+            "   d.atorc_id = a.id " +
+            "ORDER BY d.titulo, d.dataLancamento;"
         );
 
         ResultSet rs = stmt.executeQuery();
