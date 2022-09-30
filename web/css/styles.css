@@ -68,6 +68,18 @@ a > p:hover{
 }
 
 
+p {
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: all .2s ease-in-out;
+}
+
+p:hover{
+
+    color: #03d3fc;
+}
+
+
 /* FORMS */
 
 
