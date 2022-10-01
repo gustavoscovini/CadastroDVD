@@ -95,7 +95,7 @@ public class ClassificacaoDAO extends DAO<Classificacao> {
         
         PreparedStatement stmt = getConnection().prepareStatement(
         
-                "SELECT * FROM classificao " +
+                "SELECT * FROM classificacao " +
                 " WHERE id = ?;"   
         );
         
