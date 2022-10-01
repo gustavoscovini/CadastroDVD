@@ -1,15 +1,10 @@
 
+/* CUSTOMIZAÇÃO DA INDEX  */
+
 body {
     background-color: rgb(10, 0, 39);
 }
 
-/*body {
-  align-items: center;
-  background-color: #000;
-  display: flex;
-  justify-content: center;
-  height: 100vh;
-}*/
 h1 {
     text-align: center;
     color: white;
@@ -18,7 +13,7 @@ h1 {
     font-size: 70px;
 }
 
-
+/* não lembro o pq desse, acho que nao to usando mais */
 .cadastrar {
     text-align: center;
     color: white;
@@ -27,13 +22,14 @@ h1 {
     font-size: 40px;
 }
 
+/* coloco os elementos em grid */
 .container {
     display: grid;
     /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
     grid-template-columns: repeat(4, 1fr);
-    /* esssa é a altura das linhas, se vc quiser pode apaga-la caso não queira uma altura definida */
+    /* essa é a altura das linhas */
     grid-auto-rows: 100px;
-    /* espaço entre um elemento interno e outro */
+    /* espaço entre um elemento de dentro e outro */
     grid-gap: 5px 8px;
     /* margem interna que afasta os elementos da borda do grid */
     padding: 20px 10px;
@@ -42,7 +38,7 @@ h1 {
     margin-top: 100px;
   }
   
-
+/* aqui eu coloco efeitos nos icones svg */
 svg{
     transition: all .3s ease-in-out;
 }
@@ -52,6 +48,7 @@ svg:hover{
     transform: scale(1.15);
 }
 
+/* customizo os links e o paragrafo dentro do link*/
 a{
     text-decoration: none;
 }
@@ -80,7 +77,8 @@ p:hover{
 }
 
 
-/* FORMS */
+/* CUSTOMIZAÇÃO DOS FORMS (PEGUEI UM TEMPLATE DA NET E MODIFIQUEI UM POUCO) ENTÃO NÃO CONSIGO
+EXPLICAR MTO PQ TEM COISAS Q TBM N SEI KK*/
 
 
   
@@ -93,7 +91,7 @@ p:hover{
     width: 420px;
     margin: auto;
   }
-  
+  /* TITULO */
   .title {
     color: #eee;
     font-family: sans-serif;
@@ -109,7 +107,7 @@ p:hover{
     font-weight: 600;
     margin-top: 10px;
   }
-  
+    /* COONTAINER DOS INPUTS*/
   .input-container {
     height: 50px;
     position: relative;
@@ -137,6 +135,7 @@ p:hover{
     width: 100%;
   }
   
+    /* AQ ELE FAZ A TRANSIÇÃO DO PLACEHOLDER QUANDO O USUARIO SELECIONA O CAMPO */
   .cut {
     background-color: #15172b;
     border-radius: 10px;
@@ -149,6 +148,7 @@ p:hover{
     width: 72px;
   }
   
+  /* AQ A MESMA COISA MAS PARA UM PLACEHOLDER DE TAMANHO MAIOR */
   .cut-grande {
     background-color: #15172b;
     border-radius: 10px;
@@ -161,7 +161,7 @@ p:hover{
     width: 132px;
   }
 
-
+/* AQ A MESMA COISA MAS PARA UM PLACEHOLDER DE TAMANHO MENOR */
   .cut-short {
     width: 50px;
   }
@@ -201,7 +201,7 @@ p:hover{
   .input:focus ~ .placeholder {
     color: #03d3fc;
   }
-  
+  /* BOTAO SUBMIT */
   .submit {
     background-color: #009BFF;
     border-radius: 12px;
@@ -221,6 +221,7 @@ p:hover{
     background-color: #06b;
   }
   
+  /* CUSTOMIZAÇÃO DAS CAIXAS DE SELECT */
   select{
     background-color: #303245;
     border-radius: 12px;
@@ -256,7 +257,7 @@ p:hover{
   select::-ms-expand {
     display: none;
   }
-
+/* NÃO ESTÁ MAIS EM USO ESSE FORMBODY */
   .formbody{
     align-items: center;
   background-color: rgb(10, 0, 39);;
@@ -265,7 +266,8 @@ p:hover{
   height: 150vh;
   }
 
-
+/* CUSTOMIZACAO DAS TABELAS */
+/* AQ TBM USEI TEMPLATE DA INTERNET, MUDEI ALGUMAS COISAS SÓ, MAS VAI COMPARANDO OS NOMES DAS CLASSES NOS ARQUIVOS JSP PRA ENTENDER MELHOR*/
 .tabelaListagem {
     text-align: left;
     overflow: hidden;
@@ -298,6 +300,7 @@ p:hover{
   color:#A7A1AE;
 }
 
+/* ESSES DOIS DEIXAM AS LINHAS PARES COM COR DIFERENTE DAS IMPARES */
 .tabelaListagem tr:nth-child(odd) {
 	  background-color: #323C50;
 }
@@ -328,6 +331,8 @@ p:hover{
 	  transition-property: all;
   transition-timing-function: line;
 }
+
+/* AQUI MUDA A COR QUANDO PASSA O MOUSE NA ULTIMA CELULA DE CADA LINHA */
 .tabelaListagem td:last-child:hover{
     background-color: #5A0000;
   color:#3F3F3F;
@@ -342,11 +347,12 @@ p:hover{
   transition-timing-function: line;
 }
 
-
+/* ESSE BODY LISTAGEM É PRO BODY DA PAGINA DE TABELA MAS NAO É NECESSÁRIO */
 .bodylistagem {
     background-color: rgb(10, 0, 39);
 }
 
+/* ESSES DOIS BI BI É PRA CUSTOMIZAR OS ICONES EM SVG */
 .bi.bi-arrow-repeat:hover{
     fill: #009BFF;
 }
@@ -355,6 +361,7 @@ p:hover{
     fill: red;
 }
 
+/* ESSE .MENU É A CUSTOMIZAÇÃO DOS LINKS Q VAO FICAR EM CIMA DA TABELA (HOME, CADASTRAR NOVO)*/
 
 .menu{
     margin-bottom: 80px;
