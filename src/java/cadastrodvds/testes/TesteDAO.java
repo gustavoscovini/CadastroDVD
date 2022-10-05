@@ -70,7 +70,7 @@ public class TesteDAO {
 */
         
         DvdDAO dvd = new DvdDAO();
-        dvd.listarTodos();
+        System.out.println(dvd.obterPorId(9));
         
     }
     

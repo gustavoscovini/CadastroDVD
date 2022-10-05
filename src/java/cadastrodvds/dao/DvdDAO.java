@@ -108,10 +108,10 @@ public class DvdDAO extends DAO<Dvd> {
             "   a.nome nomeAtorP, " +
             "   a.sobrenome sobrenomeAtorP, " +
             "   a.dataEstreia dataEstreiaAtorP, " +
-            "   a.id atorC, " +
-            "   a.nome nomeAtorC, " +
-            "   a.sobrenome sobrenomeAtorC, " +
-            "   a.dataEstreia dataEstreiaAtorC, " +
+            "   ac.id atorC, " +
+            "   ac.nome nomeAtorC, " +
+            "   ac.sobrenome sobrenomeAtorC, " +
+            "   ac.dataEstreia dataEstreiaAtorC, " +
             "   g.id idGenero," +
             "   g.descricao descricaoGenero, " +
             "   c.id idClassificacao, " +
@@ -120,11 +120,13 @@ public class DvdDAO extends DAO<Dvd> {
             "   dvd d, " +
             "   genero g, " +
             "   classificacao c, " +
-            "   ator a " +
+            "   ator a, " +
+            "   ator ac " +
             "   WHERE" +
             "   d.genero_id = g.id AND " +
             "   d.classificacao_id = c.id AND " +
-            "   d.atorp_id = a.id " +
+            "   d.atorp_id = a.id AND " +
+            "   d.atorc_id = ac.id " +
             "ORDER BY d.titulo, d.dataLancamento;"
         );
 
@@ -176,7 +178,90 @@ public class DvdDAO extends DAO<Dvd> {
 
     @Override
     public Dvd obterPorId(int id) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        Dvd d = null;
+        
+        PreparedStatement stmt = getConnection().prepareStatement(
+            "SELECT" +
+            "   d.id idDvd, " +
+            "   d.titulo tituloDvd, " +
+            "   d.dataLancamento dataLancamentoDvd, " +
+            "   d.anoLancamento anoLancamentoDvd, " +
+            "   d.duracao duracaoDvd, " +
+            "   a.id atorP, " +
+            "   a.nome nomeAtorP, " +
+            "   a.sobrenome sobrenomeAtorP, " +
+            "   a.dataEstreia dataEstreiaAtorP, " +
+            "   ac.id atorC, " +
+            "   ac.nome nomeAtorC, " +
+            "   ac.sobrenome sobrenomeAtorC, " +
+            "   ac.dataEstreia dataEstreiaAtorC, " +
+            "   g.id idGenero," +
+            "   g.descricao descricaoGenero, " +
+            "   c.id idClassificacao, " +
+            "   c.descricao descricaoClassificacao " +
+            "   FROM" +
+            "   dvd d, " +
+            "   genero g, " +
+            "   classificacao c, " +
+            "   ator a, " +
+            "   ator ac " +
+            "   WHERE" +
+            "   d.genero_id = g.id AND " +
+            "   d.classificacao_id = c.id AND " +
+            "   d.atorp_id = a.id AND " +
+            "   d.atorc_id = ac.id " +
+            "ORDER BY d.titulo, d.dataLancamento;"
+        );
+        
+        stmt.setInt(1, id);
+        
+        ResultSet rs = stmt.executeQuery();
+        
+        if ( rs.next() ) {
+            
+            d = new Dvd();
+            Classificacao c = new Classificacao();
+            Genero g = new Genero();
+            Ator ap = new Ator();
+            Ator ac = new Ator();
+            
+            c.setId(rs.getInt("idClassificacao"));
+            c.setDescricao("descricaoClassificacao");
+            
+            ap.setId(rs.getInt("atorP"));
+            ap.setNome(rs.getString("nomeAtorP"));
+            ap.setSobrenome(rs.getString("sobrenomeAtorP"));
+            ap.setDataEstreia(rs.getDate("dataEstreiaAtorP"));
+            
+            ac.setId(rs.getInt("atorC"));
+            ac.setNome(rs.getString("nomeAtorC"));
+            ac.setSobrenome(rs.getString("sobrenomeAtorC"));
+            ac.setDataEstreia(rs.getDate("dataEstreiaAtorC"));
+            
+            g.setId(rs.getInt("idGenero"));
+            g.setDescricao(rs.getString("descricaoGenero"));
+
+            d.setId( rs.getInt( "idDvd" ) );
+            d.setTitulo(rs.getString("tituloDvd"));
+            d.setDataLancamento(rs.getDate("dataLancamentoDvd"));
+            d.setAnoLancamento(rs.getString("anoLancamentoDvd"));
+            d.setDuracao(rs.getString("duracaoDvd"));
+            d.setAtorp(ap);
+            d.setAtorc(ac);
+            d.setGenero(g);
+            d.setClassificacao(c);
+            
+            
+            
+        }
+        
+        rs.close();
+        stmt.close();
+
+        return d;
+        
+    
     }
     
 }
