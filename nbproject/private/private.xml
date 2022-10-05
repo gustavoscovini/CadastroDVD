@@ -4,12 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/src/java/cadastrodvds/dao/DvdDAO.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/classificacoes/listagem.jsp</file>
             <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/dvds/alterar.jsp</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/src/java/cadastrodvds/controladores/ClassificacoesServlet.java</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/dvds/listagem.jsp</file>
+            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/dvds/excluir.jsp</file>
+            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/src/java/cadastrodvds/servicos/DVDServices.java</file>
             <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/dvds/novo.jsp</file>
-            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/src/java/cadastrodvds/controladores/DvdsServlet.java</file>
+            <file>file:/C:/Users/gusta/OneDrive/Documentos/NetBeansProjects/CadastroDVD/web/formularios/classificacoes/excluir.jsp</file>
         </group>
     </open-files>
 </project-private>

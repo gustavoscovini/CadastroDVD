@@ -44,6 +44,7 @@
                 <th>NOME</th>
                 <th>SOBRENOME</th>
                 <th>DATA DE ESTREIA</th>
+                <th colspan="2"> </th>
             </thead>
             
             <tbody>

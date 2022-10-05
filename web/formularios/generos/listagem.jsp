@@ -42,6 +42,7 @@
             <thead>
                 <th>ID</th>
                 <th>DESCRIÇÃO</th>
+                <th colspan="2"> </th>
             </thead>
             
             <tbody>

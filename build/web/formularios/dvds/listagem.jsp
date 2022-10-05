@@ -40,7 +40,7 @@
         <table class="tabelaListagemGrande">
             
             <thead>
-                <th>ID</th>
+                <th>ID&emsp;&emsp;</th>
                 <th>TITULO</th>
                 <th>DATA DE LANÇAMENTO</th>
                 <th>ANO DE LANÇAMENTO</th>
@@ -49,8 +49,7 @@
                 <th>CLASSIFICACAO</th>
                 <th>ATOR PRINCIPAL</th>
                 <th>ATOR COADJUVANTE</th>
-                <th> </th>
-                <th> </th>
+                <th colspan="2"> </th>
             </thead>
             
             <tbody>
