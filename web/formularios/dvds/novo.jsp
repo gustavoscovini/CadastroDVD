@@ -61,9 +61,9 @@
       </div>
       
       <div class="input-container ic1">
-        <input name="duracao" class="input" type="text" placeholder=" " />
+        <input name="duracao" class="input" type="number" placeholder=" " />
         <div class="cut-grande"></div>
-        <label for="duracao" class="placeholder">Duração</label>
+        <label for="duracao" class="placeholder">Duração(minutos)</label>
       </div>
       
       <div class="input-container ic2">
@@ -74,6 +74,9 @@
             class="cadastrodvds.servicos.GeneroServices"/>
           
         <select name="genero" id="genero" required placeholder="">
+            
+            <option value="" disabled selected>Selecione o gênero</option>
+            
             <c:forEach items="${servicosG.todos}" var="genero">
                 <option value="${genero.id}">
                     ${genero.descricao}
@@ -92,6 +95,9 @@
             class="cadastrodvds.servicos.ClassificacaoServices"/>
           
         <select name="classificacao" id="classificacao" required placeholder="">
+            
+            <option value="" disabled selected>Selecione a classificação</option>
+             
             <c:forEach items="${servicosC.todos}" var="classificacao">
                 <option value="${classificacao.id}">
                     ${classificacao.descricao}
@@ -110,7 +116,9 @@
               scope="page"
               class="cadastrodvds.servicos.AtorServices"/>
           
-        <select name="atorp" id="atorp"  placeholder="">
+        <select name="atorp" id="atorp" required placeholder="">
+            
+            <option value="" disabled selected>Selecione o ator principal</option>
             
             <c:forEach items="${servicosAP.todos}" var="atorp">
                 <option value="${atorp.id}">
@@ -131,7 +139,9 @@
               scope="page"
               class="cadastrodvds.servicos.AtorServices"/>
         
-        <select name="atorc" id="atorc"  placeholder="">
+        <select name="atorc" id="atorc" required placeholder="">
+            
+            <option value="" disabled selected>Selecione o ator coadjuvante</option>
             
             <c:forEach items="${servicosAC.todos}" var="atorc">
                 <option value="${atorc.id}">
@@ -144,11 +154,6 @@
         <div class="cut-grande"></div>
         <label for="atorc" class="placeholder">Ator Coadjuvante</label>
       </div>
-      
-      
-      
-      
-      
       
       <button type="text" class="submit">Cadastrar</button>
          

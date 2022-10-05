@@ -35,8 +35,6 @@
             </a>
         </div>
         
-        
-        
         <table class="tabelaListagem">
             
             <thead>

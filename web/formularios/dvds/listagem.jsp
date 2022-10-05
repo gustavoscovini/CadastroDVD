@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
-<c:set var="prefixo" value="processaAtores?acao=preparar"/>
+<c:set var="prefixo" value="processaDVDS?acao=preparar"/>
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +27,7 @@
                 </svg>
                 Home
             </a> &nbsp;
-            <a href="${cp}/formularios/classificacoes/novo.jsp">
+            <a href="${cp}/formularios/dvds/novo.jsp">
                 <svg class="home-new" xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
                     <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
                 </svg>
@@ -49,6 +49,8 @@
                 <th>CLASSIFICACAO</th>
                 <th>ATOR PRINCIPAL</th>
                 <th>ATOR COADJUVANTE</th>
+                <th> </th>
+                <th> </th>
             </thead>
             
             <tbody>
@@ -70,7 +72,7 @@
                         <td>${dvd.atorp.nome} ${dvd.atorp.sobrenome}</td>
                         <td>${dvd.atorc.nome} ${dvd.atorc.sobrenome}</td>
                         <td>
-                            <a href="${cp}/${prefixo}Alteracao&id=${ator.id}">
+                            <a href="${cp}/${prefixo}Alteracao&id=${dvd.id}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#009BFF" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
                                     <path d="M11.534 7h3.932a.25.25 0 0 1 .192.41l-1.966 2.36a.25.25 0 0 1-.384 0l-1.966-2.36a.25.25 0 0 1 .192-.41zm-11 2h3.932a.25.25 0 0 0 .192-.41L2.692 6.23a.25.25 0 0 0-.384 0L.342 8.59A.25.25 0 0 0 .534 9z"/>
                                     <path fill-rule="evenodd" d="M8 3c-1.552 0-2.94.707-3.857 1.818a.5.5 0 1 1-.771-.636A6.002 6.002 0 0 1 13.917 7H12.9A5.002 5.002 0 0 0 8 3zM3.1 9a5.002 5.002 0 0 0 8.757 2.182.5.5 0 1 1 .771.636A6.002 6.002 0 0 1 2.083 9H3.1z"/>
@@ -78,7 +80,7 @@
                             </a>
                         </td>
                         <td>
-                            <a href="${cp}/${prefixo}Exclusao&id=${ator.id}">
+                            <a href="${cp}/${prefixo}Exclusao&id=${dvd.id}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="red" class="bi bi-chevron-contract" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M3.646 13.854a.5.5 0 0 0 .708 0L8 10.207l3.646 3.647a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 0 0 0 .708zm0-11.708a.5.5 0 0 1 .708 0L8 5.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708z"/>
                                 </svg>

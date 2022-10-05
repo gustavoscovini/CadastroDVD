@@ -113,6 +113,7 @@ public class DvdsServlet extends HttpServlet {
                 ac.setId(atorc);
                 
                 Dvd dvd = new Dvd();
+                dvd.setId(id);
                 dvd.setTitulo(titulo);
                 dvd.setDataLancamento(Date.valueOf(LocalDate.parse( dataLancamento, dtf ) ));
                 dvd.setAnoLancamento(anoLancamento);
@@ -123,26 +124,26 @@ public class DvdsServlet extends HttpServlet {
                 dvd.setAtorc(ac);
                 
                 dao.atualizar(dvd);
-                disp = request.getRequestDispatcher("/formularios/generos/listagem.jsp");
+                disp = request.getRequestDispatcher("/formularios/dvds/listagem.jsp");
             }else if(acao.equals("excluir")){
                 
                 int id = Integer.parseInt(request.getParameter( "id" ));
-                Genero g = new Genero();
-                g.setId(id);
-                //dao.excluir( g );
-                disp = request.getRequestDispatcher("/formularios/generos/listagem.jsp");
+                Dvd d = new Dvd();
+                d.setId(id);
+                dao.excluir( d );
+                disp = request.getRequestDispatcher("/formularios/dvds/listagem.jsp");
             }else{
                 
                 int id = Integer.parseInt(request.getParameter( "id" ));
-                //Genero g = dao.obterPorId(id);
-//                request.setAttribute( "genero", g );
-                
+                Dvd d = dao.obterPorId(id);
+                request.setAttribute( "dvd", d );
+     
                 if ( acao.equals( "prepararAlteracao" ) ) {
                     disp = request.getRequestDispatcher(
-                    "/formularios/generos/alterar.jsp" );
+                    "/formularios/dvds/alterar.jsp" );
                 } else if ( acao.equals( "prepararExclusao" ) ) {
                     disp = request.getRequestDispatcher(
-                    "/formularios/generos/excluir.jsp" );
+                    "/formularios/dvds/excluir.jsp" );
                 }
                 
             }

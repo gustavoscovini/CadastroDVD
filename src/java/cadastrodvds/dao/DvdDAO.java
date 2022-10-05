@@ -55,13 +55,13 @@ public class DvdDAO extends DAO<Dvd> {
 
             "UPDATE dvd " +
             "SET" +
-            " titulo = ?," +
-            " dataLancamento = ?," +
-            " anoLancamento = ?," +
-            " duracao = ?," +
-            " atorp_id = ?," +
-            " atorc_id = ?," +
-            " genero_id = ?," +
+            " titulo = ?, " +
+            " dataLancamento = ?, " +
+            " anoLancamento = ?, " +
+            " duracao = ?, " +
+            " atorp_id = ?, " +
+            " atorc_id = ?, " +
+            " genero_id = ?, " +
             " classificacao_id = ? " +
             "WHERE" +
             " id = ?;"
@@ -76,6 +76,9 @@ public class DvdDAO extends DAO<Dvd> {
         stmt.setInt(7, obj.getGenero().getId());
         stmt.setInt(8, obj.getClassificacao().getId());
         stmt.setInt(9, obj.getId());
+        
+        stmt.executeUpdate();
+        stmt.close();
     }
 
     @Override
@@ -127,7 +130,7 @@ public class DvdDAO extends DAO<Dvd> {
             "   d.classificacao_id = c.id AND " +
             "   d.atorp_id = a.id AND " +
             "   d.atorc_id = ac.id " +
-            "ORDER BY d.titulo, d.dataLancamento;"
+            "ORDER BY d.id, d.titulo, d.dataLancamento;"
         );
 
         ResultSet rs = stmt.executeQuery();
@@ -141,7 +144,7 @@ public class DvdDAO extends DAO<Dvd> {
             Ator ac = new Ator();
             
             c.setId(rs.getInt("idClassificacao"));
-            c.setDescricao("descricaoClassificacao");
+            c.setDescricao(rs.getString("descricaoClassificacao"));
             
             ap.setId(rs.getInt("atorP"));
             ap.setNome(rs.getString("nomeAtorP"));
@@ -210,7 +213,8 @@ public class DvdDAO extends DAO<Dvd> {
             "   d.genero_id = g.id AND " +
             "   d.classificacao_id = c.id AND " +
             "   d.atorp_id = a.id AND " +
-            "   d.atorc_id = ac.id " +
+            "   d.atorc_id = ac.id AND " +
+            "   d.id = ? " + 
             "ORDER BY d.titulo, d.dataLancamento;"
         );
         
@@ -227,7 +231,7 @@ public class DvdDAO extends DAO<Dvd> {
             Ator ac = new Ator();
             
             c.setId(rs.getInt("idClassificacao"));
-            c.setDescricao("descricaoClassificacao");
+            c.setDescricao(rs.getString("descricaoClassificacao"));
             
             ap.setId(rs.getInt("atorP"));
             ap.setNome(rs.getString("nomeAtorP"));
@@ -251,8 +255,6 @@ public class DvdDAO extends DAO<Dvd> {
             d.setAtorc(ac);
             d.setGenero(g);
             d.setClassificacao(c);
-            
-            
             
         }
         
