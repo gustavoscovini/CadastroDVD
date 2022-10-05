@@ -1,6 +1,6 @@
 <%-- 
-    Document   : excluir
-    Created on : 30 de set. de 2022, 23:57:26
+    Document   : alterar
+    Created on : 30 de set. de 2022, 23:49:54
     Author     : Jonas
 --%>
 
@@ -11,11 +11,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Excluir Classificacão</title>
+        <title>Alterar Ator</title>
         <link rel="stylesheet" href="${cp}/css/styles.css"/>
     </head>
     <body>
-        <h1>Excluir Classificação</h1>
+        <h1>Alterar Ator</h1>
         
         <div class="menu">
             <a href="${cp}/index.jsp">
@@ -29,31 +29,38 @@
                     <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
                     <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
                 </svg>
-                Ver Classificações Cadastradas
+                Ver Atores Cadastrados
             </a>
         </div>
                 
                 
-        <form method="post" action="${cp}/processaClassificacoes">
+        <form method="post" action="${cp}/processaAtores">
         
-            <input name="acao" type="hidden" value="excluir"/>
-            <input name="id" type="hidden" value="${requestScope.classificacao.id}"/>
+            <input name="acao" type="hidden" value="alterar"/>
+            <input name="id" type="hidden" value="${requestScope.ator.id}"/>
 
-             <div class="title">Por favor, confirme a exclusão: </div>
-             
+             <div class="title">Insira os novos dados: </div>
+
+             <div class="input-container ic1">
+               <input name="nome" class="input" type="text" placeholder=" " value="${requestScope.ator.nome}"/>
+               <div class="cut"></div>
+               <label for="nome" class="placeholder">Nome</label>
+             </div>
              
              <div class="input-container ic1">
-               <input disabled name="id" class="input" type="text" placeholder=" " value="${requestScope.classificacao.id}"/>
+               <input name="sobrenome" class="input" type="text" placeholder=" " value="${requestScope.ator.sobrenome}"/>
                <div class="cut"></div>
-               <label for="id" class="placeholder">ID</label>
+               <label for="sobrenome" class="placeholder">Sobrenome</label>
              </div>
                
              <div class="input-container ic1">
-               <input disabled name="descricao" class="input" type="text" placeholder=" " value="${requestScope.classificacao.descricao}"/>
+               <input name="dataEstreia" class="input" type="date" placeholder=" " value="${requestScope.ator.dataEstreia}"/>
                <div class="cut"></div>
-               <label for="descricao" class="placeholder">Descrição</label>
+               <label for="dataEstreia" class="placeholder">Data de Estreia</label>
              </div>
-             <button type="text" class="submit">Excluir</button>
+               
+               
+             <button type="text" class="submit">Atualizar</button>
 
 
        </form>

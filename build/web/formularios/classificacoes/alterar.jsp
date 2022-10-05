@@ -46,7 +46,7 @@
                <div class="cut"></div>
                <label for="descricao" class="placeholder">Descrição</label>
              </div>
-             <button type="text" class="submit">Cadastrar</button>
+             <button type="text" class="submit">Atualizar</button>
 
 
        </form>

@@ -39,8 +39,15 @@
             <input name="acao" type="hidden" value="excluir"/>
             <input name="id" type="hidden" value="${requestScope.classificacao.id}"/>
 
-             <div class="title">Insira a nova descrição: </div>
-
+             <div class="title">Por favor, confirme a exclusão: </div>
+             
+             
+             <div class="input-container ic1">
+               <input disabled name="id" class="input" type="text" placeholder=" " value="${requestScope.classificacao.id}"/>
+               <div class="cut"></div>
+               <label for="id" class="placeholder">ID</label>
+             </div>
+               
              <div class="input-container ic1">
                <input disabled name="descricao" class="input" type="text" placeholder=" " value="${requestScope.classificacao.descricao}"/>
                <div class="cut"></div>

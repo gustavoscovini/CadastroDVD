@@ -99,7 +99,7 @@ public class DvdDAO extends DAO<Dvd> {
 
         PreparedStatement stmt = getConnection().prepareStatement(
             "SELECT" +
-            "   d.id idDvd," +
+            "   d.id idDvd, " +
             "   d.titulo tituloDvd, " +
             "   d.dataLancamento dataLancamentoDvd, " +
             "   d.anoLancamento anoLancamentoDvd, " +
@@ -115,17 +115,16 @@ public class DvdDAO extends DAO<Dvd> {
             "   g.id idGenero," +
             "   g.descricao descricaoGenero, " +
             "   c.id idClassificacao, " +
-            "   c.descricao descricaoClassificacao, " +
+            "   c.descricao descricaoClassificacao " +
             "   FROM" +
             "   dvd d, " +
             "   genero g, " +
             "   classificacao c, " +
-            "   ator a" +
+            "   ator a " +
             "   WHERE" +
             "   d.genero_id = g.id AND " +
             "   d.classificacao_id = c.id AND " +
-            "   d.atorp_id = a.id AND " +
-            "   d.atorc_id = a.id " +
+            "   d.atorp_id = a.id " +
             "ORDER BY d.titulo, d.dataLancamento;"
         );
 

@@ -22,7 +22,7 @@ import java.sql.SQLException;
 public class TesteDAO {
     
     public static void main(String[] args) throws SQLException {
-        
+        /*
         Genero g = new Genero();
         g.setDescricao("testando");
         
@@ -67,6 +67,11 @@ public class TesteDAO {
         DvdDAO dd = new DvdDAO();
         
         dd.salvar(d);
+*/
+        
+        DvdDAO dvd = new DvdDAO();
+        dvd.listarTodos();
+        
     }
     
 }
