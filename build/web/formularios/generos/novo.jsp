@@ -40,7 +40,7 @@
         
      <input name="acao" type="hidden" value="inserir"/>
         
-      <div class="title">Insira a descrição da nova classificação: </div>
+      <div class="title">Insira a descrição do novo gênero: </div>
 
       <div class="input-container ic1">
         <input name="descricao" class="input" type="text" placeholder=" " />

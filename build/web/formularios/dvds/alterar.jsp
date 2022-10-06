@@ -62,6 +62,62 @@
                 
             <div class="input-container ic2">
 
+             <jsp:useBean
+                 id="servicosG"
+                 scope="page"
+                 class="cadastrodvds.servicos.GeneroServices"/>
+
+             <select name="genero" id="idGenero" required placeholder="">
+                 <c:forEach items="${servicosG.todos}" var="genero">
+                    <c:choose>
+                        <c:when test="${requestScope.dvd.genero.id eq
+                        genero.id}">
+                            <option value="${genero.id}" selected>
+                                ${genero.descricao}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${genero.id}">
+                            ${genero.descricao}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
+                 </c:forEach>
+             </select>
+             <div class="cut-grande"></div>
+             <label for="genero" class="placeholder">Gênero</label>
+           </div>
+             
+            <div class="input-container ic2">
+
+             <jsp:useBean
+                 id="servicosC"
+                 scope="page"
+                 class="cadastrodvds.servicos.ClassificacaoServices"/>
+
+             <select name="classificacao" id="classificacao" required placeholder="">
+                 <c:forEach items="${servicosC.todos}" var="classificacao">
+                     <c:choose>
+                        <c:when test="${requestScope.dvd.classificacao.id eq
+                        classificacao.id}">
+                            <option value="${classificacao.id}" selected>
+                                ${classificacao.descricao}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${classificacao.id}">
+                            ${classificacao.descricao}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
+                 </c:forEach>
+             </select>
+             <div class="cut-grande"></div>
+             <label for="genero" class="placeholder">Classificação</label>
+           </div>
+             
+            <div class="input-container ic2">
+
               <jsp:useBean
                   id="servicosAP"
                   scope="page"
@@ -116,62 +172,7 @@
               <label for="ator" class="placeholder">Ator coadjuvante</label>
             </div>
               
-            <div class="input-container ic2">
-
-             <jsp:useBean
-                 id="servicosG"
-                 scope="page"
-                 class="cadastrodvds.servicos.GeneroServices"/>
-
-             <select name="genero" id="idGenero" required placeholder="">
-                 <c:forEach items="${servicosG.todos}" var="genero">
-                    <c:choose>
-                        <c:when test="${requestScope.dvd.genero.id eq
-                        genero.id}">
-                            <option value="${genero.id}" selected>
-                                ${genero.descricao}
-                            </option>
-                        </c:when>
-                        <c:otherwise>
-                            <option value="${genero.id}">
-                            ${genero.descricao}
-                            </option>
-                        </c:otherwise>
-                    </c:choose>
-                 </c:forEach>
-             </select>
-             <div class="cut-grande"></div>
-             <label for="genero" class="placeholder">Gênero</label>
-           </div>
-             
-            <div class="input-container ic2">
-
-             <jsp:useBean
-                 id="servicosC"
-                 scope="page"
-                 class="cadastrodvds.servicos.ClassificacaoServices"/>
-
-             <select name="classificacao" id="classificacao" required placeholder="">
-                 <c:forEach items="${servicosC.todos}" var="classificacao">
-                     <c:choose>
-                        <c:when test="${requestScope.dvd.classificacao.id eq
-                        classificacao.id}">
-                            <option value="${classificacao.id}" selected>
-                                ${classificacao.descricao}
-                            </option>
-                        </c:when>
-                        <c:otherwise>
-                            <option value="${classificacao.id}">
-                            ${classificacao.descricao}
-                            </option>
-                        </c:otherwise>
-                    </c:choose>
-                 </c:forEach>
-             </select>
-             <div class="cut-grande"></div>
-             <label for="genero" class="placeholder">Classificação</label>
-           </div>
-             <button type="text" class="submit">Atualizar</button>
+            <button type="text" class="submit">Atualizar</button>
 
        </form>
     </body>
