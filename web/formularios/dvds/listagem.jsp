@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
 <c:set var="prefixo" value="processaDVDS?acao=preparar"/>
 
@@ -46,7 +47,7 @@
                 <th>ANO DE LANÇAMENTO</th>
                 <th>DURACAO</th>
                 <th>GENERO</th>
-                <th>CLASSIFICACAO</th>
+                <th>CLASSIFICAÇÃO</th>
                 <th>ATOR PRINCIPAL</th>
                 <th>ATOR COADJUVANTE</th>
                 <th colspan="2"> </th>
@@ -63,7 +64,11 @@
                     <tr>
                         <td>${dvd.id}</td>
                         <td>${dvd.titulo}</td>
-                        <td>${dvd.dataLancamento}</td>
+                        <td>
+                            <fmt:formatDate
+                            pattern="dd/MM/yyyy"
+                            value="${dvd.dataLancamento}"/>
+                        </td>
                         <td>${dvd.anoLancamento}</td>
                         <td>${dvd.duracao}</td>
                         <td>${dvd.genero.descricao}</td>

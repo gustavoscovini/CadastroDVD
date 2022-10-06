@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <c:set var="cp" value="${pageContext.request.contextPath}"/>
 <c:set var="prefixo" value="processaAtores?acao=preparar"/>
 
@@ -59,7 +60,12 @@
                         <td>${ator.id}</td>
                         <td>${ator.nome}</td>
                         <td>${ator.sobrenome}</td>
-                        <td>${ator.dataEstreia}</td>
+                        <td>
+                            <fmt:formatDate
+                            pattern="dd/MM/yyyy"
+                            value="${ator.dataEstreia}"/>
+                            
+                        </td>
                         <td>
                             <a href="${cp}/${prefixo}Alteracao&id=${ator.id}">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#009BFF" class="bi bi-arrow-repeat" viewBox="0 0 16 16">
