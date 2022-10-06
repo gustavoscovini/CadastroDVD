@@ -69,13 +69,23 @@
 
               <select name="atorp" id="atorp" required placeholder="">
                   <c:forEach items="${servicosAP.todos}" var="atorp">
-                      <option value="${atorp.id}">
-                          ${atorp.nome} ${atorp.sobrenome}
-                      </option>
+                      <c:choose>
+                        <c:when test="${requestScope.dvd.atorp.id eq
+                        atorp.id}">
+                            <option value="${atorp.id}" selected>
+                                ${atorp.nome} ${atorp.sobrenome}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${atorp.id}">
+                                ${atorp.nome} ${atorp.sobrenome}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
                   </c:forEach>
               </select>
               <div class="cut-grande"></div>
-              <label for="ator" class="placeholder">Ator principal</label>
+              <label for="atorp" class="placeholder">Ator Principal</label>
             </div>
               
             <div class="input-container ic2">
@@ -87,9 +97,19 @@
 
               <select name="atorc" id="atorc" required placeholder="">
                   <c:forEach items="${servicosAC.todos}" var="atorc">
-                      <option value="${atorc.id}">
-                          ${atorc.nome} ${atorc.sobrenome}
-                      </option>
+                      <c:choose>
+                        <c:when test="${requestScope.dvd.atorc.id eq
+                        atorc.id}">
+                            <option value="${atorc.id}" selected>
+                                ${atorc.nome} ${atorc.sobrenome}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${atorc.id}">
+                                ${atorc.nome} ${atorc.sobrenome}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
                   </c:forEach>
               </select>
               <div class="cut-grande"></div>
@@ -105,9 +125,19 @@
 
              <select name="genero" id="idGenero" required placeholder="">
                  <c:forEach items="${servicosG.todos}" var="genero">
-                     <option value="${genero.id}">
-                         ${genero.descricao}
-                     </option>
+                    <c:choose>
+                        <c:when test="${requestScope.dvd.genero.id eq
+                        genero.id}">
+                            <option value="${genero.id}" selected>
+                                ${genero.descricao}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${genero.id}">
+                            ${genero.descricao}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
                  </c:forEach>
              </select>
              <div class="cut-grande"></div>
@@ -123,9 +153,19 @@
 
              <select name="classificacao" id="classificacao" required placeholder="">
                  <c:forEach items="${servicosC.todos}" var="classificacao">
-                     <option value="${classificacao.id}">
-                         ${classificacao.descricao}
-                     </option>
+                     <c:choose>
+                        <c:when test="${requestScope.dvd.classificacao.id eq
+                        classificacao.id}">
+                            <option value="${classificacao.id}" selected>
+                                ${classificacao.descricao}
+                            </option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${classificacao.id}">
+                            ${classificacao.descricao}
+                            </option>
+                        </c:otherwise>
+                    </c:choose>
                  </c:forEach>
              </select>
              <div class="cut-grande"></div>
